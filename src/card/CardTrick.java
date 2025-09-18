@@ -63,6 +63,24 @@ public class CardTrick {
             } else {
                 System.out.println("Sorry, your card is not in the magic hand.");
             }
+            // lucky card That I edited in Githup (hard-coded)
+            Card luckyCard = new Card();
+            luckyCard.setValue(2);
+            luckyCard.setSuit(Card.SUITS[2]); //2 = clubs if the your chose 2 will win otherwise will lose
+
+            boolean luckyFound = false;
+            for (Card c : magicHand) {
+                if (c.getValue() == luckyCard.getValue() && c.getSuit().equals(luckyCard.getSuit())) {
+                    luckyFound = true;
+                    break;
+                }
+            }
+
+            if (luckyFound) {
+                System.out.println("You WIN! The lucky card (Clubs 2) is in the magic hand!");
+            } else {
+                System.out.println("The lucky card (Clubs 2) is not in the magic hand.");
+            }
         }
         // and search magicHand here
         //Then report the result here
